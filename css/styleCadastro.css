@@ -1,0 +1,10 @@
+#content {
+    display: flex;
+    width: clamp(450px, 300px, 200px);
+    padding: 3.5rem 4.5rem;
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 80%;
+    border-radius: 1%;
+    margin-top: 2.5rem;
+    z-index: 100;
+}
