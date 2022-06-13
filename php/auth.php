@@ -42,10 +42,11 @@ if (isset($_POST['inputUserName']) && isset($_POST['inputPassword'])) {
                     $_SESSION['user_ProfileImg'] = $user_ProfileImg;
                     $_SESSION['user_Fav01'] = $user_Fav01;
                     $_SESSION['user_Fav02'] = $user_Fav02;
-                    print_r($user);
+                    
+                    header("Location: ./home.php");
                     
                 } else {
-                    header("Location: ./login.php?error=Incorrect_data2");
+                    header("Location: ./login.php?error=Incorrect_data1");
                     
                 }
             } else {
