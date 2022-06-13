@@ -75,6 +75,7 @@ h5 a:visited {
 }
 .input-div {
     position: relative;
+    border-radius: 4px;
 }
 .input-div:first-child {
     margin-top: 1.8rem;
@@ -107,6 +108,9 @@ h5 a:visited {
     transition: all 100ms ease-in-out ;
     user-select: none;
 }
+.placeholder-input:hover {
+    cursor: text;
+}
 .inputLogin:focus {
     background-color: rgba(58, 57, 63, 0.63);
 }
@@ -117,6 +121,16 @@ h5 a:visited {
 .inputLogin:not(:placeholder-shown) + .placeholder-input{
     top: 8%;
     font-size: 11px;
+}
+
+.errMessage {
+    margin-top: .2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ffae00;
+}
+.errStyle {
+    box-shadow: 0 2px 0 #ffae00;
 }
 
 .button-div {
@@ -133,6 +147,9 @@ h5 a:visited {
     color: white;
     font-weight: 500;
     border-radius: 4px;
+}
+.button-div button:hover {
+    cursor: pointer;
 }
 .shadowFooter {
     position: absolute;

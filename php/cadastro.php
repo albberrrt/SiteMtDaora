@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/styleCadastro.css" media="screen" type="text/css">
     <link rel="stylesheet" href="../css/styleMain.css" media="screen" type="text/css">
 
-    <title>BigodeFlix - Entrar</title>
+    <title>BigodeFlix - Cadastro</title>
 
 </head>
 <body>
