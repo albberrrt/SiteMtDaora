@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="../css/styleMain.css" media="screen" type="text/css">
 
     <?php include_once("./auth.php"); ?>
-    <?php
-    if (isset($_GET['error'])){
-    $error = $_GET['error'];
-    }
-    ?>
 
     <title>BigodeFlix - Entrar</title>
 
@@ -29,48 +24,7 @@
                 <h1>Entrar</h1>
                 <section id="secLogin">
                     
-                    <?php if (isset($error)) { if ($error == "invalid_user") { ?>
-                        <div class="input-div">
-                            <input type="text" id="inputUserName" name="inputUserName" class="inputLogin errStyle" placeholder=" " autocomplete="of">
-                            <label for="inputUserName" class="placeholder-input">Email ou nome de usuário</label>
-                        </div>
-                        <div class="errMessage">
-                            Email ou nome de usuário inválido
-                        </div>
-                        <div class="input-div">
-                            <input type="password" id="inputPassword" name="inputPassword" class="inputLogin" value="" placeholder=" ">
-                            <label for="inputPassword" class="placeholder-input">Senha</label>
-                        </div>
-                    <?php }} else {?>
-
-                        <div class="input-div">
-                            <input type="text" id="inputUserName" name="inputUserName" class="inputLogin" placeholder=" " autocomplete="of">
-                            <label for="inputUserName" class="placeholder-input">Email ou nome de usuário</label>
-                        </div>
-
-                    <?php } ?>
-
-                    <?php if (isset($error)) { if ($error == "invalid_password") { ?>
-                        <div class="input-div">
-                            <input type="text" id="inputUserName" name="inputUserName" class="inputLogin" placeholder=" " autocomplete="of">
-                            <label for="inputUserName" class="placeholder-input">Email ou nome de usuário</label>
-                        </div>
-
-                        <div class="input-div">
-                            <input type="password" id="inputPassword" name="inputPassword" class="inputLogin  errStyle" value="" placeholder=" ">
-                            <label for="inputPassword" class="placeholder-input">Senha</label>
-                        </div>
-                        <div class="errMessage">
-                            Senha inválida
-                        </div>
-                    <?php }} else { ?>
-
-                        <div class="input-div">
-                            <input type="password" id="inputPassword" name="inputPassword" class="inputLogin" value="" placeholder=" ">
-                            <label for="inputPassword" class="placeholder-input">Senha</label>
-                        </div>
-
-                    <?php } ?>
+                    <?php include_once("./loginForm.php"); ?>
 
                     <div class="button-div">
                         <button type="submit">Entrar</button>

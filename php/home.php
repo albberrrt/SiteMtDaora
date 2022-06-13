@@ -13,5 +13,16 @@
 </head>
 <body>
 
+    <header>
+
+    </header>
+    <main>
+
+    </main>
+    <div class="borderFooter"></div>
+    <footer>
+        <h2>BigodeFlix ®</h2>
+    </footer>
+
 </body>
 </html>
