@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+}
+header {
+    width: 100%;
+    display: flex;
+    z-index: 100;
+    background: linear-gradient(rgba(0, 0, 0, 0.945) 0%, rgba(49, 0, 0, 0.062) 100%);
+}
+.logo-Div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3%;
+}
+.nav-Div {
+    position: absolute;
+    width: 4.5rem;
+    height: 0;
+    margin-top: 1rem;
+    right: 5%;
+    transform: scale(0.8);
+}
+
+.navImages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.profileImageDiv{
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profileImageDiv img {
+    width: 70px;
+    height: 70px;
+}
+.hoverImages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.setinha {
+    transition: all 230ms ease-in-out;
+}
+.hoverImages:hover + .setinha {
+    transform: rotate(-180deg);
+}
+
+.dropMenu {
+    width: 230%;
+    right: -50%;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(12, 12, 12, 0.5);
+}
+.dropButton {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(12, 12, 12, 0.5);
+    color: white;
+}
+.dropButton a:link {
+    text-decoration: none;
+    color: white;
+}
+.dropButton a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filmApresentationBack {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+.filmApresentationBack img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
+}
+.gradientFilmApresentation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.616) 0%, rgba(49, 0, 0, 0.062) 100%);
+}
+
+.filmApresentation {
+    height: 44%;
+    width: 50%;
+}
+.filmApresentationContent {
+    width: 100%;
+    height: 100%;
+    margin-top: 35%;
+    margin-bottom: 0%;
+    margin-left: 10%;
+}
+.filmApresentationContent h1 {
+    font-size: 7rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+.filmApresentationButtons {
+    margin-top: 5%;
+    display: flex;
+}
+.filmApresentationButtons a:link {
+    text-decoration: none;
+    color: black;
+}
+.filmApresentationButtons a:visited {
+    text-decoration: none;
+    color: black;
+}
+#buttonAssistir {
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    height: 3.8rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: black;
+    border-radius: 5px;
+}
+#buttonAssistir img{
+    filter: invert(1);
+    transform: rotate(90deg);
+}
+#buttonAssistir span {
+    padding-left: .5rem;
+}
+#buttonAssistir:hover {
+    background-color: rgb(204, 204, 204);
+}
+#infoFilm {
+    background-color: rgba(143, 143, 143, 0.596);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 1rem;
+    padding: 0 4rem;
+}
+#infoFilm:hover {
+    background-color: rgba(109, 109, 109, 0.596);
+    cursor: pointer;
+}
+
+.filmSectionAll {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(27, 27, 27, 0.021) 0%, rgb(27, 27, 27) 60%);
+}
+
+.filmSection {
+    margin-top: 10%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.filmPost {
+    display: flex;
+    margin-left: 3.2%;
+}
+
+.borderFooter {
+    content: " ";
+    height: 1%;
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+}
+
+footer {
+    width: 100%;
+    height: 11%;
+    background-color: rgb(0, 0, 0);
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer h2 {
+    font-family: 'Roboto',sans-serif;
+    color: rgba(116, 116, 116, 0.89);
+    font-weight: 500;
+}
