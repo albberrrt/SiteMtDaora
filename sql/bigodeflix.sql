@@ -39,3 +39,5 @@ INSERT INTO `movies` (`movieId`, `movieName`, `movieDesc`, `movieDuration`, `rel
 , '130', '2006', NULL, NULL, NULL, '../img/movieBanners/VdeVingançaBanner.webp', '../img/movieBackgrounds/VdeVingançaBackground.jpg', 'https://streamtape.com/v/lxZv8lGKD2f7K6z');
 
 INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassWord`, `userFav01`, `userFav02`, `userImg`) VALUES ('1', 'carolteytey', 'anne.carol.rx@gemail.com', 'carolteytey', '1', '2', '../img/profileImage/carolteyteyProfile.png');
+
+INSERT INTO `moviegenres` (`idGenre`, `Genre`) VALUES ('1', 'Romance'), ('2', 'Terror');
