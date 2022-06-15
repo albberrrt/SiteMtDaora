@@ -1,3 +1,12 @@
+<?php
+session_start();
+    
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,6 +16,8 @@
 
     <link rel="stylesheet" href="../css/styleCadastro.css" media="screen" type="text/css">
     <link rel="stylesheet" href="../css/styleMain.css" media="screen" type="text/css">
+
+    
 
     <title>BigodeFlix - Cadastro</title>
 
@@ -25,16 +36,40 @@
                 </div>
                 <section id="secCadastro">
                     <div class="input-div">
+                    <?php if ($error == 26 || $error == 22 || $error == 24) { ?>
+                        <input type="text" id="inputCadEmail" class="inputLogin errStyle" name="inputCadEmail" placeholder=" " autocomplete="of">
+                        <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                        <div class="errMessage">
+                            Usuário ou Senha inválidos
+                        </div>
+                    <?php } else {?>
                         <input type="text" id="inputCadEmail" class="inputLogin" name="inputCadEmail" placeholder=" " autocomplete="of">
                         <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                    <?php } ?>
                     </div>
                     <div class="input-div">
-                        <input type="text" id="inputCadUserName" class="inputLogin" name="inputCadUserName" placeholder=" " autocomplete="of">
-                        <label for="inputCadUserName" class="placeholder-input">Nome de usuário</label>
+                    <?php if ($error == 30 || $error == 22 || $error == 28) { ?>
+                        <input type="text" id="inputCadEmail" class="inputLogin errStyle" name="inputCadEmail" placeholder=" " autocomplete="of">
+                        <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                        <div class="errMessage">
+                            Usuário ou Senha inválidos
+                        </div>
+                    <?php } else {?>
+                        <input type="text" id="inputCadEmail" class="inputLogin" name="inputCadEmail" placeholder=" " autocomplete="of">
+                        <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                    <?php } ?> 
                     </div>
                     <div class="input-div">
-                        <input type="password" id="inputCadPassword" class="inputLogin" name="inputCadPassword" value="" placeholder=" ">
-                        <label for="inputCadPassword" class="placeholder-input">Senha</label>
+                    <?php if ($error == 28 || $error == 32 || $error == 24) { ?>
+                        <input type="text" id="inputCadEmail" class="inputLogin errStyle" name="inputCadEmail" placeholder=" " autocomplete="of">
+                        <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                        <div class="errMessage">
+                            Usuário ou Senha inválidos
+                        </div>
+                    <?php } else {?>
+                        <input type="text" id="inputCadEmail" class="inputLogin" name="inputCadEmail" placeholder=" " autocomplete="of">
+                        <label for="inputCadEmail" class="placeholder-input">E-mail</label>
+                    <?php } ?>
                     </div>
                     <div class="button-div">
                         <button type="submit">Entrar</button>

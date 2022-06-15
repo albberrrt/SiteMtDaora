@@ -3,6 +3,7 @@
 session_start();
 require_once './dbConnection.php';
 
+$y = 2;
 if (isset($_POST['inputCadEmail']) && isset($_POST['inputCadUserName']) && isset($_POST['inputCadPassword'])) {
     $emailCadInput = $_POST['inputCadEmail'];
     $userCadInput = $_POST['inputCadUserName'];
@@ -10,18 +11,18 @@ if (isset($_POST['inputCadEmail']) && isset($_POST['inputCadUserName']) && isset
 
     $inputCad = array($emailCadInput, $userCadInput, $passwordCadInput);
 
-    $y = 1;
-    $z = 0;
     for ($x = 0; $x < 3; $x++) {
         if(empty($inputCad[$x])) {
-            $y += $x;
+            $y++;
         }
-
+        $y = ($y * 2) + $x;
         
     }
-    if ($y > 0) {
-        header("Location: ./cadastro.php?error=$y");
-    }
+
+        
+    
+} else {
+    header("Location: ./cadastro.php?error=$y");
 }
 
 
