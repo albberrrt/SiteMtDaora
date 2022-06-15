@@ -18,19 +18,22 @@
     </header>
     <main>
         <div id="content">
-            <form>
+            <form action="./cadastroAuth.php" method="POST">
                 <h1>Cadastro</h1>
-                <section id="secLogin">
+                <div class="progressBarClass">
+                    <div class="progressBar"></div>
+                </div>
+                <section id="secCadastro">
                     <div class="input-div">
-                        <input type="text" id="inputCadEmail" class="inputLogin" placeholder=" " autocomplete="of">
+                        <input type="text" id="inputCadEmail" class="inputLogin" name="inputCadEmail" placeholder=" " autocomplete="of">
                         <label for="inputCadEmail" class="placeholder-input">E-mail</label>
                     </div>
                     <div class="input-div">
-                        <input type="text" id="inputCadUserName" class="inputLogin" placeholder=" " autocomplete="of">
+                        <input type="text" id="inputCadUserName" class="inputLogin" name="inputCadUserName" placeholder=" " autocomplete="of">
                         <label for="inputCadUserName" class="placeholder-input">Nome de usuário</label>
                     </div>
                     <div class="input-div">
-                        <input type="password" id="inputCadPassword" class="inputLogin" value="" placeholder=" ">
+                        <input type="password" id="inputCadPassword" class="inputLogin" name="inputCadPassword" value="" placeholder=" ">
                         <label for="inputCadPassword" class="placeholder-input">Senha</label>
                     </div>
                     <div class="button-div">

@@ -13,7 +13,7 @@ if (isset($_POST['inputUserName']) && isset($_POST['inputPassword'])) {
         header("Location: ./login.php?error=invalid_user");
 
     } else if (empty($passwordInput)) {
-        header("Location: ./login.php?error=invalid_password");
+        header("Location: ./login.php?error=invalid_password&email=$userInput");
       
     } else {
         
@@ -46,14 +46,14 @@ if (isset($_POST['inputUserName']) && isset($_POST['inputPassword'])) {
                     header("Location: ./home.php");
                     
                 } else {
-                    header("Location: ./login.php?error=Incorrect_data1");
+                    header("Location: ./login.php?error=Incorrect_data&email=$userInput");
                     
                 }
             } else {
-                header("Location: ./login.php?error=Incorrect_data2");
+                header("Location: ./login.php?error=Incorrect_data&email=$userInput");
             }
         } else {
-            header("Location: ./login.php?error=Incorrect_data3");
+            header("Location: ./login.php?error=Incorrect_data&email=$userInput");
         }
 
     }
@@ -67,6 +67,8 @@ if (isset($_GET['error'])) {
         $error_code = 123;
     } else if ($error == "invalid_password") {
         $error_code = 124;
+    } else if ($error == "Incorrect_data") {
+        $error_code = 125;
     }
 
     }

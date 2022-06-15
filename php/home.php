@@ -16,6 +16,8 @@ if (isset($_SESSION['user_Id']) && isset($_SESSION['user_Email'])){
 
     <link rel="stylesheet" href="../css/styleHome.css" media="screen" type="text/css">
 
+    
+
     <title>BigodeFlix - Home</title>
 
 </head>
@@ -25,15 +27,19 @@ if (isset($_SESSION['user_Id']) && isset($_SESSION['user_Email'])){
         <div class="logo-Div">
             <img src="../img/Logo-BigodeFlix-550x169.png" width="180">
         </div>
-        <div class="nav-Div">
-            <div class="navImages">
-                <div class="profileImageDiv">
-                <img src="<?php echo $_SESSION['user_ProfileImg']; ?>" width="90">
+        <div class="nav-Div" id="navDiv">
+            <button id="buttonMenu">
+                <div class="navImages">
+                    <div class="hoverImages">
+                        <div class="profileImageDiv">
+                        <img src="<?php echo $_SESSION['user_ProfileImg']; ?>" width="90">
+                        </div>
+                    </div>
+                    
+                    <img class="setinha" src="../img/setinha.png" id="setaImg" width="12">
                 </div>
-                <div class="hoverImages"></div>
-                <img class="setinha" src="../img/setinha.png" width="12">
-            </div>
-            <div class="dropMenu">
+            </button>
+            <div class="dropMenu" id="dropMenu">
                 <div class="dropMenuAccount dropButton">
                     <a href="./account.php">
                         Conta
@@ -96,7 +102,9 @@ if (isset($_SESSION['user_Id']) && isset($_SESSION['user_Email'])){
         <h2>BigodeFlix ®</h2>
     </footer>
 
+    <script type="text/javascript" src="../js/style.js"></script>
 </body>
+
 </html>
 
 <?php
