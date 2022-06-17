@@ -35,25 +35,29 @@ if (isset($_POST['inputUserName']) && isset($_POST['inputPassword'])) {
             
 
             if($userInput === $user_Email or $userInput === $user_Name) {
-                if ($user_Password === $passwordInput) {
+                if (password_verify($passwordInput, $user['userPassWord'])) {
                     $_SESSION['user_Id'] = $user_Id;
                     $_SESSION['user_Email'] = $user_Email;
                     $_SESSION['user_Name'] = $user_Name;
-                    $_SESSION['user_ProfileImg'] = $user_ProfileImg;
                     $_SESSION['user_Fav01'] = $user_Fav01;
                     $_SESSION['user_Fav02'] = $user_Fav02;
+                    if($user_ProfileImg == "null") {
+                        $_SESSION['user_ProfileImg'] = "../img/profileImage/default.jpg";
+                    } else {
+                        $_SESSION['user_ProfileImg'] = $user_ProfileImg;
+                    }
                     
                     header("Location: ./home.php");
                     
                 } else {
-                    header("Location: ./login.php?error=Incorrect_data&email=$userInput");
+                    header("Location: ./login.php?error=Incorrect_data1&email=$userInput");
                     
                 }
             } else {
-                header("Location: ./login.php?error=Incorrect_data&email=$userInput");
+                header("Location: ./login.php?error=Incorrect_data2&email=$userInput");
             }
         } else {
-            header("Location: ./login.php?error=Incorrect_data&email=$userInput");
+            header("Location: ./login.php?error=Incorrect_data3&email=$userInput");
         }
 
     }

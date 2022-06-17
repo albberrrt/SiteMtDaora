@@ -1,13 +1,50 @@
+.contentMax {
+    position: absolute;
+}
+
 #content {
     display: flex;
     width: clamp(450px, 300px, 200px);
     padding: 3.5rem 4.5rem;
     background-color: rgba(0, 0, 0, 0.753);
-    height: 80%;
+    height: clamp(620px, 560px, 450px);
     border-radius: 1%;
     margin-top: 2.5rem;
     z-index: 100;
+    flex-direction: column;
 }
+
+.backButton {
+    position: absolute;
+    top: 10.5%;
+    right: 10%;
+}
+.backButton:hover {
+    transform: scale(1.1);
+}
+.backButtonLink {
+    display: flex;
+}
+
+.backButtonLink img {
+    filter: invert(1);
+    width: 24px;
+}
+.backButtonLink h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+.backButton a:link {
+    text-decoration: none;
+}
+.backButton a:visited {
+    text-decoration: none;
+}
+
+
+
 #secCadastro {
     height: 70%;
     display: flex;
@@ -36,4 +73,84 @@
     background-color: red;
     border-radius: 4px;
     transition: width 200ms ease-in-out;
+}
+.progressBar50 {
+    content: " ";
+    height: 8px;
+    width: 50%;
+    background-color: red;
+    border-radius: 4px;
+    transition: width 400ms ease-in-out;
+}
+
+#h4Select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.custom-select {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 4px;
+}
+.custom-select select {
+    display: none;
+}
+.select-selected {
+    background-color: rgb(190, 0, 0);
+    border-radius: 4px;
+    height: 3rem;
+}
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+.select-items {
+    position: absolute;
+    background-color: rgb(47, 46, 51);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.select-hide {
+    display: none;
+}
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.cadErrMessageDiv {
+    width: 100%;
+    padding: .2rem 0;
+    color: #ffae00;
+    margin-bottom: .8rem;
+    border-bottom: 2px solid #ffae00;
+    border-radius: 1px;
+}
+.cadErrMessageDiv h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
