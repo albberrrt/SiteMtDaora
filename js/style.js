@@ -9,11 +9,11 @@ var selected = 0;
 for (let fstElem of navImages) {
     fstElem.addEventListener('mouseenter', () => {
         console.log(selected);
-        setaImg.classList.add('setaHovered');
+
     })
     fstElem.addEventListener('mouseleave', () => {
         if (selected == 0) {
-            setaImg.classList.remove('setaHovered');
+
         }
         
     })
@@ -27,6 +27,7 @@ buttonMenu.addEventListener('click', () => {
         selected = 1;
     } else if (selected == 1) {
         dropMenu.classList.remove('menuHovered');
+        setaImg.classList.remove('setaHovered');
         selected = 0;
     }
 });

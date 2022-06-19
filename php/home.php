@@ -32,7 +32,7 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                 <div class="navImages">
                     <div class="hoverImages">
                         <div class="profileImageDiv">
-                        <img src="<?php echo $_SESSION['user_ProfileImg']; ?>" width="90">
+                        <img src="<?php echo $_SESSION['user_ProfileImg']; ?>" width="70">
                         </div>
                     </div>
                     
@@ -43,6 +43,11 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                 <div class="dropMenuAccount dropButton">
                     <a href="./account.php">
                         Conta
+                    </a>
+                </div>
+                <div class="dropMenuLogout dropButton">
+                    <a href="./devs.php">
+                        Devs
                     </a>
                 </div>
                 <div class="dropMenuLogout dropButton">

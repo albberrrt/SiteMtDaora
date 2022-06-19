@@ -8,6 +8,6 @@
 
 
 
-        $genresRow = ($genresRow = $query->fetchAll(PDO::FETCH_ASSOC));
+    $genresRow = ($genresRow = $query->fetchAll(PDO::FETCH_ASSOC));
 
 ?>

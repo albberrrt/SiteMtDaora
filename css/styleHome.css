@@ -55,10 +55,7 @@ header {
     align-items: center;
     justify-content: center;
 }
-.profileImageDiv img {
-    width: 70px;
-    height: 70px;
-}
+
 .hoverImages { 
     width: 60px;
     height: 100%;

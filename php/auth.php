@@ -50,14 +50,14 @@ if (isset($_POST['inputUserName']) && isset($_POST['inputPassword'])) {
                     header("Location: ./home.php");
                     
                 } else {
-                    header("Location: ./login.php?error=Incorrect_data1&email=$userInput");
+                    header("Location: ./login.php?error=Incorrect_data&email=$userInput");
                     
                 }
             } else {
-                header("Location: ./login.php?error=Incorrect_data2&email=$userInput");
+                header("Location: ./login.php?error=Incorrect_data&email=$userInput");
             }
         } else {
-            header("Location: ./login.php?error=Incorrect_data3&email=$userInput");
+            header("Location: ./login.php?error=Incorrect_data&email=$userInput");
         }
 
     }

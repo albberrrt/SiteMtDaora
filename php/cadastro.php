@@ -51,9 +51,18 @@ if (isset($_GET['error'])) {
                             <input type="email" id="inputCadEmail" class="inputLogin errStyle" name="inputCadEmail" placeholder=" " autocomplete="of">
                             <label for="inputCadEmail" class="placeholder-input">E-mail</label>
                         </div>
-                        <div class="errMessage">
+                        <?php if(isset($_GET['emailalreadyexists'])) { 
+                            if ($_GET['emailalreadyexists'] == true) { ?>
+                                <div class="errMessage">
+                                Email já existe, coloque outro
+                                </div>
+                           <?php }
+                                } else { ?>
+                            <div class="errMessage">
                             Usuário ou Senha inválidos
-                        </div>
+                            </div>
+                        <?php } ?>   
+
                     <?php } else {?>
                         <div class="input-div">
                             <input type="email" id="inputCadEmail" class="inputLogin" name="inputCadEmail" placeholder=" " autocomplete="of" value="<?php if(isset($_GET['email'])) { echo $_GET['email'];} ?>">
@@ -69,8 +78,7 @@ if (isset($_GET['error'])) {
                         <div class="errMessage">
                             Usuário ou Senha inválidos
                         </div>
-                        
-                    <?php } else {?>
+                    <?php } else { ?>
                         <div class="input-div">
                                 <input type="text" id="inputCadName" class="inputLogin" name="inputCadUserName" placeholder=" " autocomplete="of" minlenght="4" value="<?php if(isset($_GET['userName'])) { echo $_GET['userName'];} ?>">
                                 <label for="inputCadName" class="placeholder-input">Nome de Usuário</label>
@@ -87,7 +95,7 @@ if (isset($_GET['error'])) {
                         </div>
                     <?php } else {?>
                         <div class="input-div">
-                            <input type="password" id="inputCadPassword" class="inputLogin" name="inputCadPassword" placeholder=" " autocomplete="of" value="<?php if(isset($_GET['pass'])) { echo $_GET['pass'];} ?>">
+                            <input type="password" id="inputCadPassword" class="inputLogin" name="inputCadPassword" placeholder=" " autocomplete="of">
                             <label for="inputCadPassword" class="placeholder-input">Senha</label>
                         </div>
                     <?php }} else { ?>

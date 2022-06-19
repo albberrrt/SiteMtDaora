@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(45deg, rgb(49, 0, 0) 0%, rgb(230, 4, 4) 100%);
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/25badb14-858b-4b1c-8b7d-2244098454d9/61216e4c-b2b3-40e1-85d6-2b13eb86ef2b/BR-pt-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+.allDiv {
+    width: 100%;
+    height: 100%;
+    background-color: #00000083;
+}
+#content {
+    display: flex;
+    width: 57%;
+    padding: 2.5rem 3.5rem;
+    background-color: rgba(0, 0, 0, 0.753);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 90%;
+    border-radius: 1%;
+    margin-top: 2.5rem;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    width: 100%;
+    display: flex;
+    z-index: 100;
+    background: linear-gradient(rgba(0, 0, 0, 0.945) 0%, rgba(49, 0, 0, 0.062) 100%);
+}
+.logo-Div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3%;
+}
+.nav-Div {
+    position: absolute;
+    width: 4.5rem;
+    height: 0;
+    margin-top: 1rem;
+    right: 5%;
+    transform: scale(0.8);
+}
+.nav-Div button {
+    border: 0;
+    background-color:rgba(0, 0, 0, 0);
+}
+
+.navImages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.profileImageDiv{
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hoverImages { 
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+}
+.setinha {
+    transition: all 230ms ease-in-out;
+}
+.setaHovered {
+    transform: rotate(-180deg);
+    cursor: pointer;
+}
+
+.dropMenu {
+    width: 230%;
+    right: -50%;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(12, 12, 12, 0.5);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+.menuHovered {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dropButton {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(12, 12, 12, 0.5);
+    color: white;
+}
+.dropButton a:link {
+    text-decoration: none;
+    color: white;
+}
+.dropButton a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.profileContent {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    grid-template-rows: 100%;
+}
+
+.verifyPassDiv {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.753);
+    z-index: 106;
+    border-radius: 4px;
+}
+.verifyPassDiv h4 {
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+.verifyInput {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+.verifyButton {
+    margin-left: 1.5rem;
+    width: 90% !important;
+}
+.backLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.671);
+    z-index: 105;
+    cursor: default;
+}
+
+
+.formEdit {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    grid-template-rows: 100%;
+}
+
+.secImg {
+
+}
+.secImg img {
+    width: 90%;
+    border-radius: 4px;
+}
+
+.secInfo {
+    margin-top: 2rem;
+}
+.secInfo span {
+    font-size: 16px;
+    font-weight: 300;
+    margin-right: .2rem;
+    color: red;
+}
+.secInfo h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+.secInfo h3 {
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.secFavGenres {
+    width: 100%;
+    height: 100%;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+.secFavGenres h3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+.FavGenre {
+    width: 100%;
+    height: 40%;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 500%;
+    transition: all 200ms ease-in-out;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.315) 0%, rgba(49, 0, 0, 0) 100%);
+}
+.FavGenre:hover {
+    font-size: 550%;
+    cursor: pointer;
+}
+.FavGenre:hover img {
+    transform: scale(1.05);
+}
+.FavGenre img {
+    object-fit: cover;
+    margin-top: 4rem;
+    width: 100%;
+    z-index: -1;
+    transition: all 400ms ease-in-out;
+}
+.FavGenre h1 {
+    position: absolute;
+    left: 1rem;
+}
+.h1-1 {
+    position: absolute;
+    left: 1rem;
+    font-size: 120%;
+    width: 100%;
+}
+
+.profileButtons {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+.profileButtons a {
+    width: 27%;
+}
+.editButton {
+    margin-top: 1.3rem;
+    background-color: rgb(39, 39, 39);
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;   
+}
+.profileButtons a:link {
+    color: white;
+    text-decoration: none;
+}
+.profileButtons a:visited {
+    color: white;
+    text-decoration: none;
+}
+.editButton:hover {
+    background-color: rgba(27, 27, 27, 0.716);
+    cursor: pointer;
+}
+.button-div {
+    margin-top: 1.3rem;
+    width: 27%;
+}
+.button-div button {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(190, 0, 0);
+    border: 0;
+    font-family: 'Roboto',sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.button-div button:hover {
+    cursor: pointer;
+    background-color: rgba(190, 0, 0, 0.658);
+}
+
+.input-div h4 {
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+.inptDiv2 {
+    margin-top: 1rem;
+}
+
+.input-div {
+    position: relative;
+    border-radius: 4px;
+}
+.input-div:first-child {
+    margin-top: 1.8rem;
+}
+.input-div {
+    margin-top: 1rem;
+}
+.inputLogin {
+    height: 3.3rem;
+    width: 90%;
+    padding: 1rem 1.5rem 0 1.5rem;
+    position: relative;
+    background-color: rgba(47, 46, 51, 0.63);
+    outline: none;
+    border: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+.placeholder-input{
+    position: absolute;
+    left: 1.5rem;
+    top: 33%;
+    color: #8c8c8c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    transition: all 100ms ease-in-out ;
+    user-select: none;
+}
+.placeholder-input:hover {
+    cursor: text;
+}
+.inputLogin:focus {
+    background-color: rgba(58, 57, 63, 0.63);
+}
+.inputLogin:focus + .placeholder-input {
+    top: 8%;
+    font-size: 11px;
+}
+.inputLogin:not(:placeholder-shown) + .placeholder-input{
+    top: 8%;
+    font-size: 11px;
+}
+
+.cadErrMessageDiv {
+    width: 100%;
+    padding: .2rem 0;
+    color: #ffae00;
+    margin-bottom: .8rem;
+    border-bottom: 2px solid #ffae00;
+    border-radius: 1px;
+}
+.cadErrMessageDiv h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.custom-select {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 4px;
+}
+.custom-select select {
+    display: none;
+}
+.select-selected {
+    background-color: rgb(190, 0, 0);
+    border-radius: 4px;
+    height: 3rem;
+}
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+.select-items {
+    position: absolute;
+    background-color: rgb(47, 46, 51);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.select-hide {
+    display: none;
+}
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.shadowFooter {
+    position: absolute;
+    content: " ";
+    top: 50%;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(rgba(49, 0, 0, 0.062) 0%, rgba(0, 0, 0, 0.877) 100%);
+    z-index: -1;
+}
+
+.borderFooter {
+    content: " ";
+    height: 1%;
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+}
+footer {
+    width: 100%;
+    height: 11%;
+    background-color: rgb(0, 0, 0);
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer h2 {
+    font-family: 'Roboto',sans-serif;
+    color: rgba(116, 116, 116, 0.89);
+    font-weight: 500;
+}
