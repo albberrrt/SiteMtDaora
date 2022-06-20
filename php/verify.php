@@ -1,7 +1,13 @@
 <?php 
-session_start();
-if (isset($_POST['inputPassword'])) {
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+include './dbConnection.php';
 
+if (isset($_POST['inputVefPassword'])) {
+
+    
     $passwordInput = $_POST['inputVefPassword'];
 
     $stmt = $conn->prepare('SELECT * FROM users WHERE userEmail= :userInput');
@@ -12,15 +18,17 @@ if (isset($_POST['inputPassword'])) {
         $user = $stmt->fetch();
 
         if (password_verify($passwordInput, $user['userPassWord'])) {
-     
-        header("Location: ./account.php?editMode=true");
+        $userPass = $user['userPassWord'];
+        $userName = $_SESSION['user_Name'];
+        header("Location: ./account.php?editMode=true&passh=$userPass&pass=$passwordInput&user=$userName");
                     
         } else {
-            header("Location: ./login.php?invalidpass = 046420511804272727260520067");
+            header("Location: ./account.php?invalidpass=046420511804272727260520067&verify=true");
                     
         }
 
     }
 }
+
 
 ?>

@@ -44,3 +44,9 @@ INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassWord`, `userFav
 INSERT INTO `moviegenres` (`idGenre`, `Genre`) VALUES ('1', 'Romance'), ('2', 'Terror');UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/RomanceGenre.jpg' WHERE `moviegenres`.`idGenre` = 1; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/TerrorGenre.jpg' WHERE `moviegenres`.`idGenre` = 3; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/SuspenseGenre.jpg' WHERE `moviegenres`.`idGenre` = 4; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/DramaGenre.jpg' WHERE `moviegenres`.`idGenre` = 5; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/ComédiaGenre.jpg' WHERE `moviegenres`.`idGenre` = 6; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/ComédiaRomânticaGenre.jpg' WHERE `moviegenres`.`idGenre` = 7; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/FicçãoGenre.jpg' WHERE `moviegenres`.`idGenre` = 8; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/InfantilGenre.webp' WHERE `moviegenres`.`idGenre` = 9; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/FaroesteGenre.jpg' WHERE `moviegenres`.`idGenre` = 10; UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/GuerraGenre.jpg' WHERE `moviegenres`.`idGenre` = 11;
 UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/TerrorGenre.jpg' WHERE `moviegenres`.`idGenre` = 2
 UPDATE `moviegenres` SET `genreImg` = '../img/genresBanner/AçãoGenre.jpg' WHERE `moviegenres`.`idGenre` = 3
+
+UPDATE `users` 
+SET 
+	`userEmail` = 'asenhaesoulindo@gmail.com'
+WHERE 
+    `users`.`userId` = 10
