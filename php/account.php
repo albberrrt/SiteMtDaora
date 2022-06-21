@@ -126,7 +126,7 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
             <?php if(isset($_GET['editMode'])) { ?>
             <?php if(password_verify($_GET['pass'], $_GET['passh'])) { ?>
 
-                <form class="formEdit" action="./editUser.php" enctype="multipart/form-data" method="POST">
+                <form id="formEdit" class="formEdit" action="./editUser.php" enctype="multipart/form-data" method="POST">
 
                 <div class="sec01">
                     <div id="previews"></div>

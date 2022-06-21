@@ -24,7 +24,6 @@
             file.previewElement.classList.add("dz-success");
             console.log("Successfully uploaded :" + file.name);
             console.log(file);
-            console.log($("#inputCadEmail").val());
         },
 
         init: function() {
@@ -37,13 +36,21 @@
                 e.preventDefault();
                 e.stopPropagation();
                 dropzoneObj.processQueue();
-            });
-            dropzoneObj.on("sendingmultiple", function(data, xhr, formData) {
-                formData.append("inputEdiEmail", $("#inputCadEmail").val());
-                formData.append("inputEdiUserName", $("#inputCadName").val());
-                formData.append("inputEdiPassword", $("#inputCadPassword").val());
-                console.log("oioioi");
-            });
+                var dados = $('#formEdit').serialize();
+                console.log(dados);
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: '../php/editUser.php',
+                    async: true,
+                    data: dados,
+                    success: function(response) {
+                        console.log(dados);
+                        location.reload();
+                    }
+                });
+                });
         },
     });
 

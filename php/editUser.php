@@ -16,11 +16,11 @@ echo $filename;
     echo "File empty";
 }
 
-    $newUserName = $_POST['userEdiName'];
-    $newUserEmail = $_POST['userEdiEmail'];
-    $newUserPassword = $_POST['userEdiPassword'];
-    // $newUserFav01 = $_POST['selectEdiFav01'];
-    // $newUserFav02 = $_POST['selectEdiFav02'];
+    $newUserName = $_GET['name'];
+    $newUserEmail = $_GET['email'];
+    $newUserPassword = $_GET['pass'];
+    $newUserFav01 = $_POST['selectEdiFav01'];
+    $newUserFav02 = $_POST['selectEdiFav02'];
 
     echo $newUserName;
 
