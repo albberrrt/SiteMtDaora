@@ -14,7 +14,7 @@
         } else {
             $passwordHashed = password_hash($userPasswordGET, PASSWORD_DEFAULT);
 
-            $sth = "INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassWord`, `userFav01`, `userFav02`, `userImg`) VALUES ('null', :userName, :userEmail, :userPassword, :userFav01, :userFav02, 'null')";
+            $sth = "INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassWord`, `userFav01`, `userFav02`, `userImg`) VALUES (null, :userName, :userEmail, :userPassword, :userFav01, :userFav02, 'null')";
             $insrt = $conn->prepare($sth);
             $insrt->bindParam(':userName', $userNameGET, PDO::PARAM_STR);
             $insrt->bindParam(':userEmail', $userEmailGET, PDO::PARAM_STR);
