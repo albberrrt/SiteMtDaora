@@ -38,6 +38,7 @@ CREATE TABLE `Users` (
 
 INSERT INTO `movies` (`movieId`, `movieName`, `movieDesc`, `movieDuration`, `releaseYear`, `movieGenre01`, `movieGenre02`, `movieGenre03`, `movieBanner`, `movieBackground`, `movieLink`) VALUES (NULL, 'V de Vingança', 'Após uma guerra mundial, a Inglaterra é ocupada por um governo fascista e vive sob um regime totalitário. Na luta pela liberdade, um vigilante, conhecido apenas como V, utiliza-se de táticas terroristas para enfrentar os opressores da sociedade. V salva uma jovem chamada Evey da polícia secreta e encontra nela uma nova aliada em busca de liberdade e justiça para o seu país.'
 , '130', '2006', NULL, NULL, NULL, '../img/movieBanners/VdeVingançaBanner.webp', '../img/movieBackgrounds/VdeVingançaBackground.jpg', 'https://streamtape.com/v/lxZv8lGKD2f7K6z');
+INSERT INTO `movies` (`movieId`, `movieName`, `movieDesc`, `movieDuration`, `releaseYear`, `movieGenre01`, `movieGenre02`, `movieGenre03`, `movieBanner`, `movieBackground`, `movieLink`) VALUES (NULL, 'Taxi Driver', 'Travis Bickle (Robert DeNiro) é um jovem veterano do Vietnã que volta para as ruas de Nova York trabalhando como motorista de táxi. Conhecendo melhor todos os podres das vielas da cidade, seu caminho se cruza com o das jovens Betsy (Cybill Sheperd) e Iris (Jodie Foster), uma prostituta de apenas doze anos, o que o faz se revoltar com tudo e com todos, explodindo sua raiva e violência que sempre demonstrou ter.', '114', '1976', '4', '5', '3', '../img/movieBanners/TaxiDriverBanner.webp', '../img/movieBackground/TaxiDriverBackground.jpg', '')
 
 INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassWord`, `userFav01`, `userFav02`, `userImg`) VALUES ('1', 'carolteytey', 'anne.carol.rx@gmail.com', 'carolteytey', '1', '2', '../img/profileImage/carolteyteyProfile.png');
 
@@ -50,3 +51,5 @@ SET
 	`userEmail` = 'asenhaesoulindo@gmail.com'
 WHERE 
     `users`.`userId` = 10
+
+    UPDATE `users` SET `userName` = 'alberto', `userEmail` = 'asenhaesoulindoo@gmail.com', `userPassWord` = '$2y$10$Hjkj6RD8/tz4PQq93lcyeeCQNPVbgNKibs4K/FhhTvDmmet7JGjd6m', `userFav01` = '2', `userFav02` = '1' WHERE `users`.`userId` = 10

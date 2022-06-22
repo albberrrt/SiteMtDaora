@@ -125,26 +125,31 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
             <?php } ?>
             <?php if(isset($_GET['editMode'])) { ?>
             <?php if(password_verify($_GET['pass'], $_GET['passh'])) { ?>
-
-                <form id="formEdit" class="formEdit" action="./editUser.php" enctype="multipart/form-data" method="POST">
-
+                <form id="formEdit" class="formEditForm" action="./ediUser.php" enctype="multipart/form-data" method="POST"></form>
+                <form id="formImg" class="formImgForm" action="./ediImg.php" enctype="multipart/form-data" method="POST"></form>
+                <div class="formEditClass">
                 <div class="sec01">
-                    <div id="previews"></div>
+
+                <div id="previews"></div>
+                    <div class="button-divImg">
+                        <button type="submit" id="submitBtnImg" form="formImg">Salvar Imagem</button>
+                        <span class="successMessage">Imagem atualiada com sucesso!</span>
+                    </div>
                     <div class="dropzone" id="dropzoneInput">
                         <div class="dz-message">Coloque sua foto aqui</div>
                     </div>
-
+                
                     <div class="input-div">
-                            <input type="email" id="inputCadEmail" class="inputLogin" name="inputEdiEmail" placeholder=" " autocomplete="of" value="<?php echo $_SESSION['user_Email']; ?>" required>
+                            <input form="formEdit" type="email" id="inputCadEmail" class="inputLogin" name="inputEdiEmail" placeholder=" " autocomplete="of" value="<?php echo $_SESSION['user_Email']; ?>" required>
                             <label for="inputCadEmail" class="placeholder-input">E-mail</label>
                     </div>
                     <div class="input-div">
-                            <input type="text" id="inputCadName" class="inputLogin" name="inputEdiUserName" placeholder=" " autocomplete="of" minlenght="4" value="<?php echo $_SESSION['user_Name']?>" required>
+                            <input form="formEdit" type="text" id="inputCadName" class="inputLogin" name="inputEdiUserName" placeholder=" " autocomplete="of" minlenght="4" value="<?php echo $_SESSION['user_Name']?>" required>
                             <label for="inputCadName" class="placeholder-input">Nome de Usuário</label>
                     </div>
                     <div class="input-div">
-                            <input type="password" id="inputCadPassword" class="inputLogin" name="inputEdiPassword" placeholder=" " autocomplete="of" value="<?php echo $_GET['pass']; ?>" required>
-                            <label for="inputCadPassword" class="placeholder-input">Senha</label>
+                            <input form="formEdit" type="password" id="inputCadPassword" class="inputLogin" name="inputEdiPassword" placeholder=" " autocomplete="of" value="">
+                            <label for="inputCadPassword" class="placeholder-input">Nova senha</label>
                         </div>
                     </section>
                 </div>
@@ -159,7 +164,7 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                         </div>
                         <?php } ?>
                         <div class="custom-select">
-                        <select class=" selectClass select01" name="selectEdiFav01" id="selectFav01Id" title="selectFav01">
+                        <select class=" selectClass select01" name="selectEdiFav01" id="selectFav01Id" title="selectFav01" form="formEdit">
                             <option value="" selected disabled hidden>Selecione aqui</option>
                             <?php foreach($genresRow as $key => $value) {?>
                                     <option for="selectFav01" value="<?php echo $value['idGenre']; ?>"><?php echo $value['Genre']; ?></option>
@@ -169,7 +174,7 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                     </div>
                     <div class="input-div inptDiv2">
                         <div class="custom-select">
-                        <select class=" selectClass select02" name="selectEdiFav02" id="selectFav02Id" title="selectFav01">
+                        <select class=" selectClass select02" name="selectEdiFav02" id="selectFav02Id" title="selectFav01" form="formEdit">
                             <option value="" selected disabled hidden>Selecione aqui</option>
                         <?php foreach($genresRow as $key => $value) { ?>
                                     <option for="selectFav02" value="<?php echo $value['idGenre']; ?>"><?php echo $value['Genre']; ?></option>
@@ -181,16 +186,15 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                     <section class="profileButtons">
                     <a href="./account.php">
                         <div class="editButton">
-                            Cancelar
+                            Voltar
                         </div>
                     </a>
                     <div class="button-div">
-                        <button type="submit" id="submitBtn">Salvar</button>
+                        <button type="submit" id="submitBtn" form="formEdit">Salvar</button>
                     </div>
                 </section>
                 </section>
-
-                </form>
+                </div>
             <?php } else {
                 header("Location: ./pagenotfound.php?error=404");
             }} ?>

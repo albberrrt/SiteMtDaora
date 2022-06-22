@@ -1,11 +1,7 @@
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const userName = urlParams.get('user');
-    
     Dropzone.autoDiscover = false;
     
     $('#dropzoneInput').dropzone({
-        url: "../php/editUser.php",
+        url: "../php/editImg.php",
         addRemoveLinks: true, 
         autoProcessQueue: false,
         maxFilesize: 8,
@@ -13,7 +9,6 @@
         resizeWidth: 300,
         resizeHeight: 300,
         resizeMethod: "crop",
-        resizeMimeType: 'image/jpeg',
         resizeQuality: 1,
         thumbnailWidth: 300,
         thumbnailHeight: 300,
@@ -22,6 +17,8 @@
         success: function (file, response) {
             var imgName = response;
             file.previewElement.classList.add("dz-success");
+            document.querySelector("#submitBtnImg").classList.add("success");
+            document.querySelector(".successMessage").style.display = "inline-block";
             console.log("Successfully uploaded :" + file.name);
             console.log(file);
         },
@@ -32,25 +29,41 @@
             dropzoneObj.on("maxfilesexceeded", function(file) {
                 this.removeFile(file);
             })
-            document.getElementById("submitBtn").addEventListener("click", function(e) {
+            document.getElementById("submitBtnImg").addEventListener("click", function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 dropzoneObj.processQueue();
-                var dados = $('#formEdit').serialize();
-                console.log(dados);
-
-                $.ajax({
-                    type: 'POST',
-                    dataType: 'json',
-                    url: '../php/editUser.php',
-                    async: true,
-                    data: dados,
-                    success: function(response) {
-                        console.log(dados);
-                        location.reload();
-                    }
-                });
-                });
+            });
+            dropzoneObj.on("addedfile", function(){
+                document.querySelector("#submitBtnImg").style.display = "inline-block";
+            })
+            dropzoneObj.on("removedfile", function(){
+                document.querySelector("#submitBtnImg").style.display = "none";
+                document.querySelector(".successMessage").style.display = "none";
+                document.querySelector("#submitBtnImg").classList.remove("success");
+            })
         },
     });
 
+    $('#formEdit').submit(function(e){
+        var varName = $('#inputCadName').val();
+        var varEmail = $('#inputCadEmail').val();
+        var varPassword = $('#inputCadPassword').val();
+        console.log(varName);
+
+        $.ajax({
+            url: '../php/ediUser.php',
+            method: 'post',
+            data: {name: varName, email: varEmail, pass: varPassword},
+            dataType: 'json',
+        }).done(function(result){
+            $('#inputCadName').val(varName);
+            $('#inputCadEmail').val(varEmail);
+            $('#inputCadPassword').val(varPassword);
+            console.log(result);
+            console.log(varName);
+            getComments();
+        })
+    });
+
+    
