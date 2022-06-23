@@ -16,9 +16,15 @@ if (!empty($_FILES)) {
     rename($filename, $newFileName);
     
     move_uploaded_file($tmpFile,$newFileName);
-    
+
     $_SESSION['user_ProfileImg'] = $newFileName;
-    
+
+    $stmt = "UPDATE `users` SET `userImg` = :userImg WHERE `users`.`userId` = :userId";
+    $insrt = $conn->prepare($stmt);
+    $insrt->bindParam(':userImg', $newFileName, PDO::PARAM_STR);
+    $insrt->bindParam(':userId', $_SESSION['user_Id'], PDO::PARAM_STR);
+    $insrt->execute();
+
 } else {
     echo "File empty";
 }

@@ -4,7 +4,7 @@ session_start();
 require_once './dbQuery.php';
 
 if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

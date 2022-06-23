@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once './dbQuery.php';
 
 if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
 
@@ -15,6 +16,7 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/styleHome.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 
     
 
@@ -74,32 +76,18 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
                 </div>
             </div>
         </div>
-        <div class="filmSectionAll">
+        <div class="filmSectionAll swiper">
             
-            <div class="filmSection">
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
+            <div class="filmSection swiper-wrapper">
+                <?php foreach ($moviesRow as $key => $value) { ?>
+                <div class="filmPost swiper-slide">
+                    <img src="<?php echo $value['movieBanner'] ?>" width="200">
                 </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
-                <div class="filmPost">
-                    <img src="../img/movieBanners/VdeVingançaBanner.webp" width="200">
-                </div>
+                <?php } ?>
                 
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </main>
     <div class="borderFooter"></div>
@@ -108,6 +96,24 @@ if (isset($_SESSION['user_Name']) && isset($_SESSION['user_Email'])){
     </footer>
 
     <script type="text/javascript" src="../js/style.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        loop: true,
+        centeredSlides: true,
+        
+        slidesPerView: 7,
+        spaceBetween: 3,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        });
+    </script>
 </body>
 
 </html>

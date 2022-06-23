@@ -4,6 +4,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     min-height: 100vh;
@@ -220,7 +223,6 @@ main {
 }
 .filmPost {
     display: flex;
-    margin-left: 3.2%;
 }
 
 .borderFooter {
