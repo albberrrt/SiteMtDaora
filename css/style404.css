@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+    overflow: hidden;
+}
 #content {
     display: flex;
     width: 70%;
@@ -11,4 +31,288 @@
     z-index: 100;
     align-items: center;
     justify-content: center;
+}
+header {
+    width: 100%;
+    display: flex;
+    z-index: 100;
+    background-color: #00000083;
+}
+.logo-Div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3%;
+}
+.nav-Div {
+    position: absolute;
+    width: 4.5rem;
+    height: 0;
+    margin-top: 1rem;
+    right: 5%;
+    transform: scale(0.8);
+}
+.nav-Div button {
+    border: 0;
+    background-color:rgba(0, 0, 0, 0);
+}
+
+.navImages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.profileImageDiv{
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hoverImages { 
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+}
+.setinha {
+    transition: all 230ms ease-in-out;
+}
+.setaHovered {
+    transform: rotate(-180deg);
+    cursor: pointer;
+}
+
+.dropMenu {
+    width: 230%;
+    right: -50%;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgba(12, 12, 12, 0.5);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+.menuHovered {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dropButton {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(12, 12, 12, 0.5);
+    color: white;
+}
+.dropButton a:link {
+    text-decoration: none;
+    color: white;
+}
+.dropButton a:visited {
+    text-decoration: none;
+    color: white;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(45deg, rgb(49, 0, 0) 0%, rgb(230, 4, 4) 100%);
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/25badb14-858b-4b1c-8b7d-2244098454d9/61216e4c-b2b3-40e1-85d6-2b13eb86ef2b/BR-pt-20220606-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+.allDiv {
+    width: 100%;
+    height: 100vh;
+    background-color: #00000083;
+}
+
+main {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+}
+.image {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+#eu{
+    transform: translateY(-80px);
+}
+#gui {
+    transform: scale(1.7);
+}
+.person span {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+form h1 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 37px;
+}
+#secLogin {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+#secLogin h5 {
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(116, 116, 116, 0.89);
+    margin-top: 24%;
+}
+h5 a:link {
+    color: rgba(255, 255, 255, 0.932);
+    text-decoration: none;
+}
+h5 a:hover {
+    text-decoration: underline;
+}
+h5 a:visited {
+    color: rgba(255, 255, 255, 0.932);
+    text-decoration: none;
+}
+.input-div {
+    position: relative;
+    border-radius: 4px;
+}
+.input-div:first-child {
+    margin-top: 1.8rem;
+}
+.input-div {
+    margin-top: 1rem;
+}
+.inputLogin {
+    height: 3.3rem;
+    width: 100%;
+    padding: 1rem 1.5rem 0 1.5rem;
+    position: relative;
+    background-color: rgba(47, 46, 51, 0.63);
+    outline: none;
+    border: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+.placeholder-input{
+    position: absolute;
+    left: 1.5rem;
+    top: 33%;
+    color: #8c8c8c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    transition: all 100ms ease-in-out ;
+    user-select: none;
+}
+.placeholder-input:hover {
+    cursor: text;
+}
+.inputLogin:focus {
+    background-color: rgba(58, 57, 63, 0.63);
+}
+.inputLogin:focus + .placeholder-input {
+    top: 8%;
+    font-size: 11px;
+}
+.inputLogin:not(:placeholder-shown) + .placeholder-input{
+    top: 8%;
+    font-size: 11px;
+}
+
+.errMessage {
+    margin-top: .2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ffae00;
+}
+.errStyle {
+    box-shadow: 0 2px 0 #ffae00;
+}
+
+.button-div {
+    position: relative;
+    margin-top: 2.5rem;
+}
+.button-div button {
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(216, 12, 12);
+    border: 0;
+    font-family: 'Roboto',sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.button-div button:hover {
+    cursor: pointer;
+}
+.shadowFooter {
+    position: absolute;
+    content: " ";
+    top: 50%;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(rgba(49, 0, 0, 0.062) 0%, rgba(0, 0, 0, 0.877) 100%);
+    z-index: -1;
+}
+
+.borderFooter {
+    content: " ";
+    height: 1%;
+    width: 100%;
+    background-color: rgb(27, 27, 27);
+}
+
+footer {
+    width: 100%;
+    height: 11%;
+    background-color: rgb(0, 0, 0);
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer h2 {
+    font-family: 'Roboto',sans-serif;
+    color: rgba(116, 116, 116, 0.89);
+    font-weight: 500;
 }
