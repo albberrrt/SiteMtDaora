@@ -63,7 +63,7 @@ if(isset($_POST['inputEdiUserName']) && isset($_POST['inputEdiEmail'])) {
     $_SESSION['user_Fav01'] = $userFav01;
     $_SESSION['user_Fav02'] = $userFav02;
 
-    header("Location: ./cadastro.php");
+    header("Location: ./account.php");
 } else {
     header("Location: ./pagenotfound.php?error=404");
 }
